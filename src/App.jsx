@@ -26,7 +26,7 @@ function App() {
         <>
             <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-200 ">
                 <NavBar toggleTheme={toggleTheme} theme={theme} />
-                <div className="grid grid-cols-12 gap-4">
+                <div className="grid  gap-4">
                     <SideBar />
                     <MainContent />
                 </div>
