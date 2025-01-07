@@ -1,17 +1,8 @@
-import { useEffect, useState } from "react";
-
-import apiClient from "../services/api-client";
+import useGames from "../hooks/useGames";
+import GameCard from "./GameCard";
 
 const GameList = () => {
-    const [games, setGames] = useState([]);
-    const [error, setError] = useState(false);
-
-    useEffect(() => {
-        apiClient
-            .get("/games")
-            .then((res) => setGames(res.data.results))
-            .catch((err) => setError(err.message));
-    });
+    const { games, error } = useGames();
 
     return (
         <>
@@ -20,11 +11,11 @@ const GameList = () => {
                     <span className="font-medium">Danger alert!</span> {error}
                 </div>
             )}
-            <ul>
+            <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                 {games.map((game) => (
-                    <li key={game.id}>{game.name}</li>
+                    <GameCard key={game.id} game={game} />
                 ))}
-            </ul>
+            </div>
         </>
     );
 };
