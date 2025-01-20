@@ -1,3 +1,4 @@
+import getCroppedImageUrl from "../services/image-url";
 import CriticScore from "./CriticScore";
 import PlatformIconList from "./PlatformIconList";
 
@@ -5,7 +6,7 @@ const GameCard = ({ game }) => {
     return (
         <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
-                <img className="rounded-t-lg w-full h-60" src={game.background_image} alt="" />
+                <img className="rounded-t-lg w-full h-60" src={getCroppedImageUrl(game.background_image)} alt="" />
             </a>
             <div className="p-5">
                 <a href="#">
