@@ -1,16 +1,16 @@
 import GameList from "./GameList";
 import PlatformSelector from "./PlatformSelector";
 
-const MainContent = ({ selectGenre }) => {
+const MainContent = ({ selectGenre, onSelectPlatform, selectPlatform }) => {
     return (
         <>
             <div className="main-content col-span-5">
                 <h1>Games</h1>
                 <div className="filter my-3">
-                    <PlatformSelector />
+                    <PlatformSelector onSelectPlatform={onSelectPlatform} selectPlatform={selectPlatform} />
                 </div>
                 <div className="cover-card">
-                    <GameList selectGenre={selectGenre} />
+                    <GameList selectPlatform={selectPlatform} selectGenre={selectGenre} />
                 </div>
             </div>
         </>
