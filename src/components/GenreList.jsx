@@ -1,6 +1,6 @@
 import useGenres from "../hooks/useGenres";
 
-const GenreList = () => {
+const GenreList = ({ onSelectGenre }) => {
     const { data, isLoading } = useGenres();
 
     if (isLoading)
@@ -27,11 +27,12 @@ const GenreList = () => {
         );
 
     return (
-        <div className="w-48 text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+        <div className="w-48 ">
             {data.map((genre) => (
                 <button
                     key={genre.id}
                     type="button"
+                    onClick={() => onSelectGenre(genre)}
                     className="relative inline-flex items-center w-full px-4 py-2 text-sm font-medium border-b border-gray-200 rounded-t-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
                 >
                     <img src={genre.image_background} alt="" width={65} height={75} className="px-2" />

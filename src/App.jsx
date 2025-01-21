@@ -7,6 +7,9 @@ import { useEffect } from "react";
 function App() {
     const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
+    // Filter Genre
+    const [selectGenre, setSelectGenre] = useState(null);
+
     const root = document.documentElement;
 
     useEffect(() => {
@@ -27,8 +30,8 @@ function App() {
             <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-200 ">
                 <NavBar toggleTheme={toggleTheme} theme={theme} />
                 <div className="grid grid-cols-6 gap-4">
-                    <SideBar />
-                    <MainContent />
+                    <SideBar onSelectGenre={(genre) => setSelectGenre(genre)} />
+                    <MainContent selectGenre={selectGenre} />
                 </div>
             </div>
         </>
