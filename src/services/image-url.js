@@ -1,4 +1,8 @@
+import noImage from "../assets/images/image-placeholder.jpeg";
+
 const getCroppedImageUrl = (url) => {
+    if (!url) return noImage;
+
     const target = "media/";
     const index = url.indexOf(target) + target.length;
 
