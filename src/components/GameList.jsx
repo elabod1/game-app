@@ -2,8 +2,8 @@ import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 
-const GameList = ({ selectGenre, selectPlatform, selectSortOrder }) => {
-    const { data, error, isLoading } = useGames(selectGenre, selectPlatform, selectSortOrder);
+const GameList = ({ selectGenre, selectPlatform, selectSortOrder, searchText }) => {
+    const { data, error, isLoading } = useGames(selectGenre, selectPlatform, selectSortOrder, searchText);
     const skeletons = [1, 2, 3, 4, 5, 6];
 
     return (

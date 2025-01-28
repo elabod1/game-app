@@ -1,12 +1,8 @@
-
 /* Start Navbar */
-.navbar-app {
-    display: flex;
-    justify-content: space-between;
-}
+
 .navbar-app .logo {
     width: 60px;
     height: 60px;
+    margin: auto;
 }
 /* End Navbar */
-

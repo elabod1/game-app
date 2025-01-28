@@ -2,7 +2,7 @@ import GameList from "./GameList";
 import PlatformSelector from "./PlatformSelector";
 import SortSelector from "./SortSelector";
 
-const MainContent = ({ selectGenre, onSelectPlatform, selectPlatform, selectSortOrder, onSelectSortOrder }) => {
+const MainContent = ({ selectGenre, onSelectPlatform, selectPlatform, selectSortOrder, onSelectSortOrder, searchText }) => {
     return (
         <>
             <div className="main-content col-span-5">
@@ -12,7 +12,7 @@ const MainContent = ({ selectGenre, onSelectPlatform, selectPlatform, selectSort
                     <SortSelector onSelectSortOrder={onSelectSortOrder} selectSortOrder={selectSortOrder} />
                 </div>
                 <div className="cover-card">
-                    <GameList selectPlatform={selectPlatform} selectGenre={selectGenre} selectSortOrder={selectSortOrder} />
+                    <GameList selectPlatform={selectPlatform} selectGenre={selectGenre} selectSortOrder={selectSortOrder} searchText={searchText} />
                 </div>
             </div>
         </>

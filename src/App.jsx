@@ -33,7 +33,7 @@ function App() {
     return (
         <>
             <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-200 ">
-                <NavBar toggleTheme={toggleTheme} theme={theme} />
+                <NavBar toggleTheme={toggleTheme} theme={theme} onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })} />
                 <div className="grid grid-cols-6 gap-4">
                     <SideBar onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })} />
 
@@ -41,6 +41,7 @@ function App() {
                         selectPlatform={gameQuery.platform}
                         selectSortOrder={gameQuery.sortOrder}
                         selectGenre={gameQuery.genre}
+                        searchText={gameQuery.searchText}
                         onSelectPlatform={(platform) => setGameQuery({ ...gameQuery, platform })}
                         onSelectSortOrder={(sortOrder) => setGameQuery({ ...gameQuery, sortOrder })}
                     />
