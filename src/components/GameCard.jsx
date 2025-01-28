@@ -1,5 +1,6 @@
 import getCroppedImageUrl from "../services/image-url";
 import CriticScore from "./CriticScore";
+import { Emoji } from "./Emoji";
 import PlatformIconList from "./PlatformIconList";
 
 const GameCard = ({ game }) => {
@@ -8,10 +9,7 @@ const GameCard = ({ game }) => {
             <a href="#">
                 <img className="rounded-t-lg w-full h-60" src={getCroppedImageUrl(game.background_image)} alt="" />
             </a>
-            <div className="p-5">
-                <a href="#">
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{game.name}</h5>
-                </a>
+            <div className="p-5 mb-2">
                 <div className="flex justify-between items-center">
                     <div className="platform">
                         <PlatformIconList platforms={game.parent_platforms.map((p) => p.platform)} />
@@ -20,6 +18,11 @@ const GameCard = ({ game }) => {
                         <CriticScore score={game.metacritic} />
                     </div>
                 </div>
+                <a href="#">
+                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        {game.name} <Emoji rating={game.rating_top} />{" "}
+                    </h5>
+                </a>
             </div>
         </div>
     );
