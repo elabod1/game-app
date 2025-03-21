@@ -1,4 +1,4 @@
-import GameList from "./GameList";
+import GameList from "./GameList/GameList";
 import PlatformSelector from "./PlatformSelector";
 import SortSelector from "./SortSelector";
 import { GameHeading } from "./GameHeading";

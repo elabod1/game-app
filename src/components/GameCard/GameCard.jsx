@@ -1,13 +1,14 @@
-import getCroppedImageUrl from "../services/image-url";
-import CriticScore from "./CriticScore";
-import { Emoji } from "./Emoji";
-import PlatformIconList from "./PlatformIconList";
+import getCroppedImageUrl from "../../services/image-url";
+import CriticScore from "../CriticScore/CriticScore";
+import { Emoji } from "../Emoji";
+import PlatformIconList from "../PlatformIconList";
+import "./GameCard.css"
 
 const GameCard = ({ game }) => {
     return (
-        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div className="heroo-div shadow dark:bg-[#08223c] dark:border-gray-900 hover:bg-gray-300 dark:hover:bg-blue-700 ">
             <a href="#">
-                <img className="rounded-t-lg w-full h-60" src={getCroppedImageUrl(game.background_image)} alt="" />
+                <img className="img-game" src={getCroppedImageUrl(game.background_image)} alt="" />
             </a>
             <div className="p-5 mb-2">
                 <div className="flex justify-between items-center">
@@ -19,7 +20,7 @@ const GameCard = ({ game }) => {
                     </div>
                 </div>
                 <a href="#">
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    <h5 className=" text-gray-900 dark:text-white">
                         {game.name} <Emoji rating={game.rating_top} />{" "}
                     </h5>
                 </a>
